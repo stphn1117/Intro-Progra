@@ -10,7 +10,7 @@ public class prueba {
 	public void establecerNombre(String nombre)
 	{
 		this.nombre = nombre;
-	}
+	} 
  //metodos para recuperar el nombre
 	public String obtenerNombre()
 	{
