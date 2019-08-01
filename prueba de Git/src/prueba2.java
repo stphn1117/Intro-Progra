@@ -10,7 +10,7 @@ public class prueba2
 	   //muestra el valor inicial de nombre para cada cuenta
 		System.out.printf("el nombre de la persona es: %s%n", cuenta1.obtenerNombre());
 		System.out.printf("el nombre de la persona es: %s%n", cuenta2.obtenerNombre());
-		
+	
 	}
 
 }
