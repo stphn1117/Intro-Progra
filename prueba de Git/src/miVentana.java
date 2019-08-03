@@ -14,10 +14,11 @@ public class miVentana extends JFrame {
  public miVentana() {
  
  super("Titulo de ventana");
+
  int Filas = 0;
  int colum = 1;
  BufferedReader br = null;
- String csvFile = "prueba1.csv";
+ String csvFile = "prueba2.csv";
  String line = "";
  String cvsSplitBy = ",";
 
@@ -74,10 +75,13 @@ GridLayout gl = new GridLayout(colum-1,Filas);
 gl.setHgap(5); gl.setVgap(5);
 
 cp.setLayout(gl);
+int cont=0;
 
-int cont = 0;
+System.out.println("columnas : "+(colum-1));
+System.out.println("Filas : "+Filas);
+//--------------------------------------------------------llenar de datos-----------------------
      
-	   try {
+	      try {
 		  
 	     		br = new BufferedReader(new FileReader(csvFile));
 	     		
@@ -85,19 +89,16 @@ int cont = 0;
 	     			
 	     			String[] data = line.split(cvsSplitBy);
 	     			String[] data2 = line.split(";");
-	     			System.out.println(data[0]);
-	     			System.out.println(data2[0]);
-	     			JLabel etiqueta = new JLabel(data2[cont]);
-	     			JLabel etiqueta2 = new JLabel(data2[1]);
-	     			JLabel etiqueta3 = new JLabel(data2[2]);
-	     			cp.add(etiqueta);
-	     			cp.add(etiqueta2);
-	     			cp.add(etiqueta3);
-
-	     			
+	     			for(int i = 0; i <=(Filas-1); i++) {
+	     			cp.add(new JLabel(String.valueOf(data2[i])));
+	     		    System.out.println("Posicion : "+ cont + "         dato : "+data2[i]);
 	     			}
-	     		
+	     		   
+				     	
+			     		
+	     		}
 	       }
+	   
 	 	
 	     	catch (FileNotFoundException e) {
 	     		e.printStackTrace();
@@ -116,7 +117,14 @@ int cont = 0;
 	     			catch (IOException e) {
 	     				e.printStackTrace();
 	        
-	     				}}}}}
+	     				}}}
+	     // cont++;
+	     // System.out.println("contador:  "+ cont);
+		   
+//}
+
+
+}}
      
      
      
