@@ -1,3 +1,5 @@
+
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.io.BufferedReader;
@@ -5,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -110,8 +113,14 @@ System.out.println("Filas : "+Filas);
 	     			String[] data = line.split(cvsSplitBy);
 	     			String[] data2 = line.split(";");
 	     			for(int i = 0; i <=(Filas-1); i++) {
-	     			cp.add(new JLabel(String.valueOf(data2[i])));
-	     		    System.out.println("Posicion : "+ cont + "         dato : "+data2[i]);
+	     			JLabel etiqueta = new JLabel(String.valueOf(data2[i]));
+	     			etiqueta.setAlignmentX(CENTER_ALIGNMENT);
+	     			etiqueta.setForeground(Color.BLACK);
+	     			etiqueta.setOpaque(true);
+	     			etiqueta.setBackground(Color.blue);
+	     			cp.add(etiqueta);
+	     			
+	     			System.out.println("Posicion : "+ cont + "         dato : "+data2[i]);
 	     		    
 	     			}
 	     		   
