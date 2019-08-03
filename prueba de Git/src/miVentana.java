@@ -1,11 +1,17 @@
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.filechooser.FileSystemView;
+
+
 
 
 public class miVentana extends JFrame {
@@ -14,15 +20,29 @@ public class miVentana extends JFrame {
  public miVentana() {
  
  super("Titulo de ventana");
+ //----------------------------------------------seleccionar archivo------------------------
+ 
+ JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+ 
+	int returnValue = jfc.showOpenDialog(null);
+	if (returnValue == JFileChooser.APPROVE_OPTION) {
+		File selectedFile = jfc.getSelectedFile();
+		System.out.println(selectedFile.getAbsolutePath());
+		System.out.println(jfc.getSelectedFile());
+		
+	}
 
+ 
+ 
  int Filas = 0;
  int colum = 1;
  BufferedReader br = null;
- String csvFile = "prueba2.csv";
+ File csvFile = jfc.getSelectedFile() ;
+
  String line = "";
  String cvsSplitBy = ",";
 
- //--------------------contar las casillas-------------------
+ //-------------------------------------------contar las casillas necesarias-------------------
  
 
  
@@ -66,7 +86,7 @@ try {
 	
 
 	
-//-------------------------------------------------llenar la interfaz de datos----
+//------------------------------------------------- interfaz ----------------------------
 
 setSize(400, 300);
 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,7 +99,7 @@ int cont=0;
 
 System.out.println("columnas : "+(colum-1));
 System.out.println("Filas : "+Filas);
-//--------------------------------------------------------llenar de datos-----------------------
+//--------------------------------------------------------llenar de datos la interfaz-----------------------
      
 	      try {
 		  
@@ -92,6 +112,7 @@ System.out.println("Filas : "+Filas);
 	     			for(int i = 0; i <=(Filas-1); i++) {
 	     			cp.add(new JLabel(String.valueOf(data2[i])));
 	     		    System.out.println("Posicion : "+ cont + "         dato : "+data2[i]);
+	     		    
 	     			}
 	     		   
 				     	
@@ -118,10 +139,7 @@ System.out.println("Filas : "+Filas);
 	     				e.printStackTrace();
 	        
 	     				}}}
-	     // cont++;
-	     // System.out.println("contador:  "+ cont);
-		   
-//}
+	     
 
 
 }}
