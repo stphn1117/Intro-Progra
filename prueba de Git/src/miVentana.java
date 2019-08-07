@@ -117,7 +117,7 @@ System.out.println("Filas : "+Filas);
 	     			etiqueta.setAlignmentX(CENTER_ALIGNMENT);
 	     			etiqueta.setForeground(Color.BLACK);
 	     			etiqueta.setOpaque(true);
-	     			etiqueta.setBackground(Color.blue);
+	     			etiqueta.setBackground(Color.pink);
 	     			cp.add(etiqueta);
 	     			
 	     			System.out.println("Posicion : "+ cont + "         dato : "+data2[i]);
