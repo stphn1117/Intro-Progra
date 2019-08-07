@@ -1,9 +1,12 @@
 package tarea2;
 import java.util.Scanner;
-import java.lang.Exception;
+import java.lang.ArithmeticException;
 public class TryCatch {
 	
 	public static void main(String[] args) throws Exception
+	{
+		
+	try
 	{
 		Scanner entrada = new Scanner(System.in);
 		int num1;
@@ -13,19 +16,17 @@ public class TryCatch {
 		num1 = entrada.nextInt();
 		System.out.print("Escriba el segundo entero:  "); 
 		num2 = entrada.nextInt();
-	try
-	{
 	    div = num1/num2;
 		System.out.printf("La división es %d" , div);
 		
 	}
-	catch(Exception exception){
+	catch(ArithmeticException e){
 		System.err.println("la excepción se manejo");
 		System.out.printf("0/0 es indeterminado, pruebe con otros valores.");
-		throw exception;
+
 	}
 	finally {
-		System.err.println("se ejecuto finally");
+		System.out.println(" Ha finalizado el proceso");
 	}
 	}
 }
