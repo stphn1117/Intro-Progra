@@ -18,6 +18,7 @@ public class TryCatch {
 		num2 = entrada.nextInt();
 	    div = num1/num2;
 		System.out.printf("La división es %d" , div);
+		throw new ArithmeticException("10");
 		
 	}
 	catch(ArithmeticException e){
