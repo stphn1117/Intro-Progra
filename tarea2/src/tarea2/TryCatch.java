@@ -7,7 +7,7 @@ import java.lang.ArithmeticException;
 
 public class TryCatch {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		Scanner entrada = new Scanner(System.in);
 		int num1;
@@ -51,9 +51,13 @@ public class TryCatch {
 	}
 	
 	
-	static void rango(int num, int den)throws ExcepcionIntervalo{
+	static void rango(int num,int den)throws ExcepcionIntervalo{
+		
 		if((num>100)||(den>10)) {
 			throw new ExcepcionIntervalo("Números fuera de rango");
 		}
+		
 	}
+	
+	
 }
